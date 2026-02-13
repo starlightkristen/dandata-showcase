@@ -13,17 +13,26 @@ const Receipts = () => {
   ];
 
   return (
-    <section className="px-6 py-24 bg-bg-secondary">
-      <div className="max-w-6xl mx-auto">
+    <section 
+      className="px-6 py-32 relative overflow-hidden"
+      style={{ background: 'linear-gradient(to bottom, #F8FAFF 0%, #FFFFFF 100%)' }}
+    >
+      {/* Decorative elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-200 rounded-full blur-3xl"></div>
+      </div>
+      
+      <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
           <h2 
-            className="font-semibold mb-4 text-text-primary"
+            className="font-bold mb-6 text-text-primary"
             style={{ 
               fontSize: 'var(--text-section)', 
               lineHeight: 'var(--leading-tight)' 
@@ -31,6 +40,9 @@ const Receipts = () => {
           >
             Receipts
           </h2>
+          <p className="text-text-secondary text-lg max-w-2xl mx-auto">
+            Forward your receipt. We'll handle the rest.
+          </p>
         </motion.div>
 
         <FlowDiagram steps={flowSteps} />
@@ -40,7 +52,7 @@ const Receipts = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="text-center text-text-primary text-2xl font-medium mb-12"
+          className="text-center text-text-primary text-4xl font-bold mb-16 gradient-text"
         >
           5 seconds.
         </motion.p>

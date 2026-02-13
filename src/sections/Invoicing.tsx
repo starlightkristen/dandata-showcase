@@ -12,17 +12,26 @@ const Invoicing = () => {
   ];
 
   return (
-    <section className="px-6 py-24 bg-bg-secondary">
-      <div className="max-w-6xl mx-auto">
+    <section 
+      className="px-6 py-32 relative overflow-hidden"
+      style={{ background: 'linear-gradient(to bottom, #FFFFFF 0%, #F0FDF4 100%)' }}
+    >
+      {/* Decorative elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
+        <div className="absolute top-20 right-1/4 w-96 h-96 bg-green-200 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-1/4 w-72 h-72 bg-emerald-200 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
           <h2 
-            className="font-semibold mb-4 text-text-primary"
+            className="font-bold mb-6 text-text-primary"
             style={{ 
               fontSize: 'var(--text-section)', 
               lineHeight: 'var(--leading-tight)' 
@@ -30,6 +39,9 @@ const Invoicing = () => {
           >
             Get Paid Faster
           </h2>
+          <p className="text-text-secondary text-lg max-w-2xl mx-auto">
+            One click to send. Three days to cash.
+          </p>
         </motion.div>
 
         <FlowDiagram steps={flowSteps} />
@@ -39,7 +51,13 @@ const Invoicing = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="text-center text-text-primary text-2xl font-medium mt-12"
+          className="text-center text-4xl font-bold mt-16"
+          style={{ 
+            background: 'linear-gradient(135deg, #10B981 0%, #34D399 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text'
+          }}
         >
           No chasing. No floating costs.
         </motion.p>
