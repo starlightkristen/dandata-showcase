@@ -1,32 +1,49 @@
 /* Design System Variables */
 :root {
   /* Backgrounds */
-  --bg-primary: #FEFEFE;
-  --bg-secondary: #F8F9FA;
+  --bg-primary: #FAFBFC;
+  --bg-secondary: #F3F4F6;
   --bg-card: #FFFFFF;
+  --bg-gradient-subtle: linear-gradient(135deg, #F8FAFF 0%, #F0F4FF 100%);
+  --bg-gradient-blue: linear-gradient(135deg, #667EEA 0%, #3B82F6 100%);
+  --bg-gradient-green: linear-gradient(135deg, #34D399 0%, #10B981 100%);
+  --bg-gradient-hero: linear-gradient(180deg, #FFFFFF 0%, #F8FAFF 50%, #EEF2FF 100%);
 
   /* Text */
-  --text-primary: #1A1A1A;
+  --text-primary: #111827;
   --text-secondary: #6B7280;
   --text-muted: #9CA3AF;
 
   /* Accents */
   --accent-blue: #3B82F6;
+  --accent-blue-light: #60A5FA;
+  --accent-blue-dark: #2563EB;
   --accent-green: #10B981;
+  --accent-green-light: #34D399;
   --accent-amber: #F59E0B;
+  --accent-purple: #8B5CF6;
 
   /* Borders */
   --border-subtle: #E5E7EB;
   --border-focus: #3B82F6;
 
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-colored: 0 10px 40px -5px rgba(59, 130, 246, 0.3);
+  --shadow-colored-green: 0 10px 40px -5px rgba(16, 185, 129, 0.3);
+
   /* Typography */
-  --text-hero: 3rem;
-  --text-section: 2rem;
+  --text-hero: 3.5rem;
+  --text-section: 2.25rem;
   --text-body: 1.125rem;
   --text-small: 0.875rem;
 
   /* Line height */
-  --leading-tight: 1.2;
+  --leading-tight: 1.15;
   --leading-normal: 1.6;
   --leading-relaxed: 1.8;
 
@@ -34,6 +51,7 @@
   --weight-normal: 400;
   --weight-medium: 500;
   --weight-semibold: 600;
+  --weight-bold: 700;
 
   /* Spacing */
   --space-xs: 0.5rem;
@@ -56,7 +74,7 @@ body {
   font-size: var(--text-body);
   line-height: var(--leading-normal);
   color: var(--text-primary);
-  background-color: var(--bg-primary);
+  background: var(--bg-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -69,13 +87,81 @@ html {
 /* Section spacing */
 section {
   padding-block: var(--space-2xl);
+  position: relative;
+}
+
+/* Utility classes for gradients */
+.gradient-text {
+  background: var(--bg-gradient-blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-border {
+  position: relative;
+  background: var(--bg-card);
+  border-radius: 0.75rem;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: var(--bg-gradient-blue);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gradient-border:hover::before {
+  opacity: 1;
+}
+
+/* Button Styles */
+.btn-primary {
+  background: var(--bg-gradient-blue);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 1.125rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow-colored);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-2xl), var(--shadow-colored);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Card Styles */
+.card-elevated {
+  background: var(--bg-card);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.3s ease;
+}
+
+.card-elevated:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
 }
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
   :root {
-    --text-hero: 2rem;
-    --text-section: 1.5rem;
+    --text-hero: 2.5rem;
+    --text-section: 1.75rem;
     --text-body: 1rem;
     --space-2xl: 6rem;
   }
