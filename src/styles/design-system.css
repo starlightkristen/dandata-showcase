@@ -1,0 +1,82 @@
+/* Design System Variables */
+:root {
+  /* Backgrounds */
+  --bg-primary: #FEFEFE;
+  --bg-secondary: #F8F9FA;
+  --bg-card: #FFFFFF;
+
+  /* Text */
+  --text-primary: #1A1A1A;
+  --text-secondary: #6B7280;
+  --text-muted: #9CA3AF;
+
+  /* Accents */
+  --accent-blue: #3B82F6;
+  --accent-green: #10B981;
+  --accent-amber: #F59E0B;
+
+  /* Borders */
+  --border-subtle: #E5E7EB;
+  --border-focus: #3B82F6;
+
+  /* Typography */
+  --text-hero: 3rem;
+  --text-section: 2rem;
+  --text-body: 1.125rem;
+  --text-small: 0.875rem;
+
+  /* Line height */
+  --leading-tight: 1.2;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.8;
+
+  /* Weights */
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 3rem;
+  --space-xl: 6rem;
+  --space-2xl: 12rem;
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: var(--text-body);
+  line-height: var(--leading-normal);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Section spacing */
+section {
+  padding-block: var(--space-2xl);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  :root {
+    --text-hero: 2rem;
+    --text-section: 1.5rem;
+    --text-body: 1rem;
+    --space-2xl: 6rem;
+  }
+}
