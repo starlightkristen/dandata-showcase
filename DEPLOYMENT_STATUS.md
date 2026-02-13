@@ -4,6 +4,8 @@
 
 The DanData showcase has been fully built and is ready for deployment to GitHub Pages.
 
+![DanData Showcase Hero](https://github.com/user-attachments/assets/29a80689-8ac3-47ba-aba5-88d21d17f7ef)
+
 ---
 
 ## What's Been Done
@@ -40,23 +42,34 @@ The DanData showcase has been fully built and is ready for deployment to GitHub 
 
 ---
 
-## How to Deploy
+## 🎯 How to Deploy (Simple 3-Step Process)
 
-### Option 1: Merge Pull Request (Recommended)
+### Step 1: Merge the Pull Request
 
-**PR #3** is open and ready: `copilot/rebuild-showcase-design` → `main`
+**PR #3** is open and ready: [`copilot/rebuild-showcase-design` → `main`](https://github.com/starlightkristen/dandata-showcase/pull/3)
 
-1. Go to: https://github.com/starlightkristen/dandata-showcase/pull/3
-2. Review the changes (if desired)
-3. Click **"Merge pull request"**
-4. Click **"Confirm merge"**
+1. Go to: **https://github.com/starlightkristen/dandata-showcase/pull/3**
+2. Click the green **"Merge pull request"** button
+3. Click **"Confirm merge"**
 
-✨ **That's it!** GitHub Actions will automatically:
-- Build the project
-- Deploy to GitHub Pages
-- Make the site live at: https://starlightkristen.github.io/dandata-showcase/
+### Step 2: Watch It Deploy
 
-### Option 2: Command Line (If you have push access)
+GitHub Actions will automatically start:
+- Go to: **https://github.com/starlightkristen/dandata-showcase/actions**
+- Watch the "Deploy to GitHub Pages" workflow (takes ~1-2 minutes)
+
+### Step 3: Visit Your Live Site
+
+Once deployment completes, visit:
+- **https://starlightkristen.github.io/dandata-showcase/**
+
+That's it! 🎉
+
+---
+
+## Alternative: Command Line Deployment
+
+If you prefer the command line and have push access:
 
 ```bash
 git checkout main
@@ -66,22 +79,42 @@ git push origin main
 
 ---
 
-## Verify Deployment
+## Verify Deployment Success
 
 After merging to main:
 
-1. **Watch the deployment**
-   - Go to: https://github.com/starlightkristen/dandata-showcase/actions
-   - Look for the "Deploy to GitHub Pages" workflow
-   - Should complete in ~1-2 minutes
+1. ✅ **GitHub Actions completes** (~1-2 minutes)
+   - Check: https://github.com/starlightkristen/dandata-showcase/actions
+   - Status should show green checkmark
 
-2. **Visit the live site**
-   - URL: https://starlightkristen.github.io/dandata-showcase/
-   - May take a few minutes to be available after first deployment
-
-3. **Check GitHub Pages settings**
+2. ✅ **GitHub Pages shows "live"**
    - Go to: Settings → Pages
-   - Should show: "Your site is live at..."
+   - Should display: "Your site is live at..."
+
+3. ✅ **Site loads properly**
+   - Visit: https://starlightkristen.github.io/dandata-showcase/
+   - You should see the DanData hero section (screenshot above)
+
+---
+
+## What Will Be Deployed
+
+When you deploy, visitors will see:
+
+✨ **Single-page showcase featuring:**
+- Clean, professional design with generous white space
+- 7 workflow sections showcasing contractor tools
+- Fully interactive receipt processing demo
+- Clickable dashboard cards with project metrics
+- Mobile-responsive layout (works on phones/tablets)
+- Smooth animations and transitions
+
+🎯 **Key demos showing:**
+- 5-second receipt processing (vs 15 minutes manual)
+- 60-second daily logs (vs lengthy manual entry)
+- One-click invoicing (vs multi-step process)
+- Real-time project tracking with margins
+- Voice-note workflows for change orders
 
 ---
 
@@ -89,53 +122,58 @@ After merging to main:
 
 ### If GitHub Pages isn't enabled:
 
-1. Go to repository **Settings** → **Pages**
+1. Go to: **Settings** → **Pages**
 2. Under "Build and deployment":
-   - Source: Select **GitHub Actions**
-3. Save changes
+   - Source: Select **GitHub Actions** (not "Deploy from branch")
+3. Save changes and try deployment again
 
-### If deployment fails:
+### If deployment workflow fails:
 
 1. Check the Actions tab for error logs
 2. Common issues:
-   - Permissions: Workflow needs `pages: write` permission
-   - Settings: GitHub Pages must be enabled
-   - Branch: Must push to `main` branch
+   - **Permissions**: Workflow needs `pages: write` and `id-token: write` permissions
+   - **Settings**: GitHub Pages must be enabled in repository settings
+   - **Branch protection**: Main branch may have restrictions
 
-### If you get a 404:
+### If you see a 404 error:
 
-- The site path should be: `/dandata-showcase/` (matches repository name)
-- This is configured in `vite.config.ts` as `base: '/dandata-showcase/'`
+- Verify the base path is correct: `/dandata-showcase/`
+- This is configured in `vite.config.ts`
+- Should match your repository name exactly
 
----
+### Need to test locally first?
 
-## What Will Be Deployed
+```bash
+# Run the verification script
+./scripts/verify-deployment.sh
 
-When you deploy, the following will be live:
-
-✨ **Single-page showcase with:**
-- Clean, professional design
-- 7 workflow sections
-- Interactive receipt processing demo
-- Clickable dashboard cards
-- Mobile-responsive layout
-- Smooth animations and transitions
-
-🎯 **The site demonstrates:**
-- 5-second receipt processing (vs 15 minutes)
-- 60-second daily logs (vs manual entry)
-- One-click invoicing (vs multi-step process)
-- Real-time project tracking
-- Voice-note workflows
+# Or manually test:
+npm install
+npm run build
+npm run preview
+# Then visit http://localhost:4173/dandata-showcase/
+```
 
 ---
 
 ## Questions?
 
-- **Can't merge PR?** You may need repository admin access
-- **Need help?** See detailed instructions in `DEPLOYMENT.md`
-- **Want to test locally?** Run: `./scripts/verify-deployment.sh`
+- **Can't see the merge button?** You may need repository admin access
+- **Want detailed instructions?** See `DEPLOYMENT.md`
+- **Need to verify the build?** Run: `./scripts/verify-deployment.sh`
+- **Found an issue?** Check the Actions logs or open an issue
 
 ---
 
-**Ready to deploy?** → [Merge PR #3](https://github.com/starlightkristen/dandata-showcase/pull/3)
+## 📋 Quick Reference
+
+| What | Where |
+|------|-------|
+| **Merge PR** | https://github.com/starlightkristen/dandata-showcase/pull/3 |
+| **Watch Deploy** | https://github.com/starlightkristen/dandata-showcase/actions |
+| **Live Site** | https://starlightkristen.github.io/dandata-showcase/ |
+| **Settings** | https://github.com/starlightkristen/dandata-showcase/settings/pages |
+
+---
+
+**Ready to deploy?** → [Click here to merge PR #3](https://github.com/starlightkristen/dandata-showcase/pull/3) 🚀
