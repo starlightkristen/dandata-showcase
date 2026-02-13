@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Timeline } from 'lucide-react';
+import { Clock } from 'lucide-react';
 import { ViewContainer } from '../components/ViewContainer';
 import { developmentTimeline } from '../data';
 
@@ -14,7 +14,7 @@ export const Evolution: React.FC = () => {
         className="space-y-8"
       >
         <div className="text-center">
-          <Timeline className="w-16 h-16 text-dandata-cyan mx-auto mb-4" />
+          <Clock className="w-16 h-16 text-dandata-cyan mx-auto mb-4" />
           <h1 className="text-6xl font-bold mb-4">How It Got Here</h1>
           <p className="text-xl text-slate-400">Built in phases. Each one solving a real pain point.</p>
         </div>
