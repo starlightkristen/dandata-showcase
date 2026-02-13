@@ -111,3 +111,23 @@ Show, don't tell. The thoughtfulness is evident in:
 - The polish and restraint
 
 The care is in the design decisions, not the copy.
+
+## Screenshots
+
+### Desktop View
+
+![Hero Section](docs/screenshots/dandata-showcase-hero.png)
+*Clean, confident hero section with generous white space*
+
+![Receipt Demo Complete](docs/screenshots/receipt-demo-complete.png)
+*Interactive receipt processing demo showing completion state*
+
+### Mobile View
+
+![Mobile Hero](docs/screenshots/mobile-hero.png)
+*Mobile-optimized layout with touch-friendly interface*
+
+### Full Page
+
+![Full Page](docs/screenshots/dandata-full-page.png)
+*Complete showcase from hero to closing section*
