@@ -43,6 +43,34 @@ npm run build
 npm run preview
 ```
 
+## Deployment
+
+### Quick Deploy to GitHub Pages
+
+This project is configured for automatic deployment to GitHub Pages via GitHub Actions.
+
+**To Deploy:**
+1. Merge PR #3 (`copilot/rebuild-showcase-design` → `main`)
+2. GitHub Actions will automatically build and deploy
+3. Site will be live at: https://starlightkristen.github.io/dandata-showcase/
+
+**Verify Before Deploy:**
+```bash
+# Run the verification script
+./scripts/verify-deployment.sh
+
+# Or manually:
+npm install
+npm run build
+```
+
+**View Deployment Status:**
+- Go to the [Actions tab](https://github.com/starlightkristen/dandata-showcase/actions)
+- Look for "Deploy to GitHub Pages" workflow
+
+For detailed deployment instructions, see [DEPLOYMENT.md](DEPLOYMENT.md)
+
+
 ## Design System
 
 The showcase follows a carefully crafted design system with:
